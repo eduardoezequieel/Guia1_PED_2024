@@ -79,6 +79,8 @@ namespace Guia1
 
             Pen pen = new Pen(Color.Black);
 
+            Console.WriteLine("test");
+
             switch (cmbColor.SelectedIndex)
             {
                 case 0: pen = new Pen(Color.Yellow); break;
