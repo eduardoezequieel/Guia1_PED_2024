@@ -36,6 +36,8 @@
             this.cmbColor = new System.Windows.Forms.ComboBox();
             this.btnDibujar = new System.Windows.Forms.Button();
             this.areaDibujo = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.areaDibujo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,18 +108,42 @@
             // areaDibujo
             // 
             this.areaDibujo.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.areaDibujo.Location = new System.Drawing.Point(292, 12);
+            this.areaDibujo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.areaDibujo.Location = new System.Drawing.Point(292, 31);
             this.areaDibujo.Name = "areaDibujo";
-            this.areaDibujo.Size = new System.Drawing.Size(390, 333);
+            this.areaDibujo.Size = new System.Drawing.Size(390, 314);
             this.areaDibujo.TabIndex = 7;
             this.areaDibujo.TabStop = false;
+            this.areaDibujo.Paint += new System.Windows.Forms.PaintEventHandler(this.areaDibujo_Paint);
             this.areaDibujo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.areaDibujo_MouseClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(77, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(507, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Por favor, haga click con su mouse y asegurese de escoger dos puntos en el espaci" +
+    "o antes de comenzar.";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(80, 263);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(125, 34);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Ejemplo2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 357);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.areaDibujo);
             this.Controls.Add(this.btnDibujar);
             this.Controls.Add(this.cmbColor);
@@ -144,5 +170,7 @@
         private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.Button btnDibujar;
         private System.Windows.Forms.PictureBox areaDibujo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnClear;
     }
 }
