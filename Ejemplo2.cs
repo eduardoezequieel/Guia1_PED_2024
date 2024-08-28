@@ -90,6 +90,11 @@ namespace Guia1
 
         private void drawLines(Graphics localArea)
         {
+            Console.WriteLine(cursorPositions[0].X);
+            Console.WriteLine(cursorPositions[0].Y);
+            Console.WriteLine(cursorPositions[1].X);
+            Console.WriteLine(cursorPositions[1].Y);
+
             if (cursorPositions[0].X == 0 && cursorPositions[0].Y == 0 ||
                 cursorPositions[1].X == 0 && cursorPositions[1].Y == 0)
             {
@@ -128,16 +133,26 @@ namespace Guia1
             int x2 = cursorPositions[1].X + 5;
             int y2 = cursorPositions[1].Y + 5;
 
-            localArea.DrawLine(pen, x1, y1, x2, y2);
+            for (int i = 0; i < iterations; i++)
+            {
+                int newX1, newY1, newX2, newY2 = 0;
+                if (Math.Abs(x1 - x2) < 40)
+                {
+                    newX1 = x1 + i * space;
+                    newY1 = y1;
+                    newX2 = x2 + i * space;
+                    newY2 = y2;
+                } 
+                else
+                {
+                    newX1 = x1;
+                    newY1 = y1 + i * space; 
+                    newX2 = x2; 
+                    newY2 = y2 + i * space; 
+                }
 
-            //for (int i = 0; i < iterations; i++)
-            //{
-            //    int offsetX = (x2 - x1) * i / (iterations - space);
-            //    int offsetY = (y2 - y1) * i / (iterations - space);
-
-            //    Console.WriteLine(offsetX + " " + offsetY);
-            //    area.DrawLine(pen, x1 + offsetX, y1 + offsetY, x2 + offsetX, y2 + offsetY);
-            //}
+                localArea.DrawLine(pen, newX1, newY1, newX2, newY2);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
