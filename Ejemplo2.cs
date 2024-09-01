@@ -25,7 +25,6 @@ namespace Guia1
         public Ejemplo2()
         {
             InitializeComponent();
-            this.btnClear.Enabled = false;
         }
 
         private void areaDibujo_MouseClick(object sender, MouseEventArgs e)
@@ -53,10 +52,6 @@ namespace Guia1
         private void btnDibujar_Click(object sender, System.EventArgs e)
         {
             this.linesCanBeDrawed = true;
-
-            this.btnDibujar.Enabled = false;
-            this.btnClear.Enabled = true;
-
             areaDibujo.Invalidate();
         }
 
@@ -161,8 +156,6 @@ namespace Guia1
             cursorPositions[1] = new CursorPosition(0, 0);
             firstPositionCanBeSet = true;
             linesCanBeDrawed = false;
-            this.btnDibujar.Enabled = true;
-            this.btnClear.Enabled = false;
 
             areaDibujo.Invalidate();
         }
