@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Hecho por Eduardo López  https://github.com/eduardoezequieel
+
+using System;
 using System.Windows.Forms;
 
 namespace Guia1
@@ -31,6 +33,11 @@ namespace Guia1
             Ejemplo3 ejemplo3 = new Ejemplo3();
             ejemplo3.StartPosition = FormStartPosition.CenterScreen;
             ejemplo3.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
